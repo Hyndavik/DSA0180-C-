@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10; 
+        n /= 10;       
+}
+    return sum;
+}
+bool isHarshad(int n) {
+    int sum = sumOfDigits(n);
+    return n % sum == 0; 
+}
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (isHarshad(number)) {
+        cout << number << " is a Harshad number." << endl;
+    } else {
+        cout << number << " is not a Harshad number." << endl;
+    }
+
+    return 0;
+}
+
+OUTPUT
+Enter a number: 18
+18 is a Harshad number.
+Enter a number: 19
+19 is not a Harshad number.
+
